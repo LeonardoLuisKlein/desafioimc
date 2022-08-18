@@ -14,14 +14,13 @@
             </div>
             <input type="range" min="1.00" max="2.50" step="0.01" @change="getImc" id="altura" />
             <div>
-                <Buttons />
-                <h2>IMC: </h2>
+                <Buttons :clickButton="IMC" />
             </div>
         </div>
-
+        <h2>IMC: {{ imc }} ({{ resultado }}) </h2>
     </div>
 </template>
-
+ 
 <script>
 import Buttons from "../Buttons/Buttons.vue";
 
@@ -40,6 +39,8 @@ export default {
         return {
             peso: "64",
             altura: "1.65",
+            imc: "23.51",
+            resultado: "Peso Normal"
         };
     },
     methods: {
@@ -50,6 +51,24 @@ export default {
             console.log(this.peso);
             console.log(this.altura);
         },
+
+        IMC() {
+            let result = this.peso / (this.altura * this.altura)
+            this.imc = result.toFixed(2)
+            if (this.imc <= 18.5) {
+                this.resultado = "Abaixo do Peso";
+            } else if (this.imc <= 24.9) {
+                this.resultado = "Peso Normal";
+            } else if (this.imc <= 29.9) {
+                this.resultado = "Sobrepeso";
+            } else if (this.imc <= 34.9) {
+                this.resultado = "Obesidade Grau I";
+            } else if (this.imc <= 39.9) {
+                this.resultado = "Obesidade Grau II";
+            } else if (this.imc > 40) {
+                this.resultado = "Obesidade Mórbida";
+            }
+        }
     },
 };
 </script>

@@ -21,7 +21,7 @@ export default {
 html,
 body,
 #app {
-  background: linear-gradient(116.82deg,rgba(270,183,24,.7),rgba(245,197,78,.6));
+ background: linear-gradient(116.82deg, rgba(245, 196, 71, 0.7) 0%, rgba(245, 197, 78, 0.6) 100%);
   width: 100vw;
   height: 100vh;
   justify-content: center;
@@ -34,5 +34,14 @@ body,
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+}
+
+#app::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 45px;
+    height: 45px;
+    accent-color: #f7b718;
+    cursor: pointer;
 }
 </style>
