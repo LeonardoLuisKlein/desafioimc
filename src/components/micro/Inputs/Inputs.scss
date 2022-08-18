@@ -1,0 +1,33 @@
+.formatInput{
+  width: 40%;
+
+.formatCard {
+  display: flex;
+  justify-content: space-between;
+}
+}
+
+p {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  color: #000000;
+}
+
+.formatValue {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 40px;
+  color: #F7B718;
+}
+
+input {
+  width: 350px;
+  height: 25px;
+  background: white;
+  border-radius: 4px;
+  height: 25px;
+  accent-color: #F7B718;
+}
