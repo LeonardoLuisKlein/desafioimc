@@ -1,5 +1,5 @@
 .formatInput{
-  width: 40%;
+  width: 100%;
 
 .formatCard {
   display: flex;
@@ -8,6 +8,8 @@
 }
 
 p {
+  display: flex;
+  align-items: center;
   font-family: "Poppins";
   font-style: normal;
   font-weight: 300;
@@ -24,10 +26,12 @@ p {
 }
 
 input {
+  -webkit-appearance: none;
+  height: 20px;
+  background: #fff;
+  outline: none;
+  opacity: .7;
+  border-radius: 12px;
   width: 350px;
-  height: 25px;
-  background: white;
-  border-radius: 4px;
-  height: 25px;
-  accent-color: #F7B718;
+  accent-color: yellow;
 }

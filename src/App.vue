@@ -16,13 +16,19 @@ export default {
 
 
 <style lang="scss">
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 html,
 body,
 #app {
+  background: linear-gradient(116.82deg,rgba(270,183,24,.7),rgba(245,197,78,.6));
+  width: 100vw;
   height: 100vh;
-  background: linear-gradient(116.82deg, rgba(247, 183, 24, 0.7) 0%, rgba(245, 197, 78, 0.6) 100%);
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
+
 * {
   margin: 0;
   padding: 0;
