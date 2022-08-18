@@ -1,17 +1,20 @@
 <template>
   <section>
-    <input type="range" min="10" max="180">
-    <input type="range" min="1.00" max="2.50" step="any">
+    <h1>Calcule seu IMC</h1>
+    <Inputs/>
+    <Inputs type="altura"/>
   </section>
 </template>
 
 <script>
+import Inputs from '@/components/micro/Inputs/Inputs.vue';
 export default {
-// eslint-disable-next-line
-name: "Card",
+    // eslint-disable-next-line
+    name: "Card",
+    components: { Inputs }
 }
 </script>
 
 <style scoped lang="scss">
-@import './Card.scss'
+@import './Card.scss';
 </style>
