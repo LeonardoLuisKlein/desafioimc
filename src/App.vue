@@ -1,15 +1,27 @@
 <template>
   <div id="app">
-    <router-view/>
+    <Card />
   </div>
 </template>
+
+<script>
+import Card from '@/components/containers/Card.vue'
+
+export default {
+  components: {
+    Card
+  }
+}
+</script>
+
 
 <style lang="scss">
 
 html,
 body,
 #app {
-  height: 100%;
+  widows: 100vw;
+  height: 100vh;
 }
 * {
   margin: 0;
