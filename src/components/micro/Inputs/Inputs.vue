@@ -1,53 +1,59 @@
 <template>
     <div id="inputs">
-        <div class="formatInput" v-if="type === 'peso'">
+        <div class="formatInput">
             <div class="formatCard">
                 <p>Peso</p>
-                <p class="formatValue">65</p>
+                <p class="formatValue">{{ this.peso }}</p>
             </div>
-            <input type="range" min="10" max="180" @input="getValue">
+            <input type="range" min="10" max="180" @change="getImc" id="peso" />
         </div>
-        <div class="formatInput" v-else-if="type === 'altura'">
+        <div class="formatInput">
             <div class="formatCard">
                 <p>Altura</p>
-                <p class="formatValue">1.64</p>
+                <p class="formatValue">{{ this.altura }}</p>
             </div>
-            <input type="range" min="1.00" max="2.50" step="any" @input="getValue">
+            <input type="range" min="1.00" max="2.50" step="0.01" @change="getImc" id="altura" />
+            <div>
+                <Buttons />
+                <h2>IMC: </h2>
+            </div>
         </div>
+
     </div>
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import Buttons from "../Buttons/Buttons.vue";
+
 
 export default {
     // eslint-disable-next-line
     name: "Inputs",
+    components: { Buttons },
     props: {
         type: {
             type: String,
-            default: "peso"
-        }
+            default: "peso",
+        },
+    },
+    data() {
+        return {
+            peso: "64",
+            altura: "1.65",
+        };
     },
     methods: {
-        ...mapActions(["setPeso", "setAltura"]),
-        getValue(e) {
-            switch (this.id) {
-                case "peso":
-                    this.setPeso(e.target.value);
-                    break;
-                case "altura":
-                    this.setAltura(e.target.value);
-                    break;
-            }
-        }
+        getImc() {
+            this.peso = document.getElementById("peso").value;
+            const getAltura = document.getElementById("altura").value;
+            this.altura = getAltura;
+            console.log(this.peso);
+            console.log(this.altura);
+        },
     },
-    mounted(){
-        console.log(this.peso)
-    }
-}
+};
 </script>
 
 <style scoped lang="scss">
-@import './Inputs.scss'
+@import "./Inputs.scss";
 </style>
