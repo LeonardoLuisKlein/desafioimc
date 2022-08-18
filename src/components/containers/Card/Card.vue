@@ -16,5 +16,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import './Card.scss'
+@import './Card.scss';
 </style>
