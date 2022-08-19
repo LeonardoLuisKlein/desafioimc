@@ -5,14 +5,14 @@
                 <p>Peso</p>
                 <p class="formatValue">{{ this.peso }}</p>
             </div>
-            <input type="range" min="10" max="180" @change="getImc" id="peso" />
+            <input type="range" min="10" max="180" @input="getImc" id="peso" />
         </div>
         <div class="formatInput">
             <div class="formatCard">
                 <p>Altura</p>
                 <p class="formatValue">{{ this.altura }}</p>
             </div>
-            <input type="range" min="1.00" max="2.50" step="0.01" @change="getImc" id="altura" />
+            <input type="range" min="1.00" max="2.50" step="0.01" @input="getImc" id="altura" />
             <div>
                 <Buttons :clickButton="IMC" />
             </div>
