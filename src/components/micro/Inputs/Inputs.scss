@@ -45,9 +45,6 @@ input {
   border-radius: 3px;
   width: 350px;
   accent-color: #f7b718;
-  @media (max-width: 630px) {
-    width: 150px;
-  }
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
